@@ -28,6 +28,7 @@ Treat scrolling as a timeline, not as a way to move past a stack of sections. Bu
 - Never assume a named Higgsfield model exists. Inspect the live catalog. If it is unavailable, explain the nearest supported model and its tradeoff before generation.
 - Build video heroes from composition-first keyframes: reserve intentional negative space for copy, approve the still, then use image-to-video with one subtle dominant motion before attempting complex scenes.
 - Offer a 3D direction during discovery when the product or story benefits from depth, spatial exploration, product manipulation, or a signature scroll moment. Choose the lightest viable route: layered 2.5D, pre-rendered video, canvas/WebGL, or a real-time Three.js scene.
+- When Webflow is selected, route implementation through the Webflow workflow in [references/webflow-workflow.md](references/webflow-workflow.md): establish Variables, classes, Components, CMS, accessibility, and publishing boundaries before adding custom motion or AI-generated code.
 - Treat the reference library as a curated source of patterns, not a collection of sites to clone. Save only analyzed, attributable, reusable patterns and record what is original in the new build.
 - Before release, run the applicable code-quality, accessibility, performance, privacy, dependency, and security checks. Do not call a site production-ready while a critical or high-risk finding remains unexplained and accepted by the user.
 - Match security testing to the actual feature set. A static marketing page needs a lighter review than a site with accounts, payments, uploads, admin tools, APIs, or an AI agent.
@@ -80,6 +81,8 @@ Before coding, inspect the project structure, existing routes, package scripts, 
 When the visual direction is not already locked, use the visual iteration workflow in [references/visual-iteration.md](references/visual-iteration.md): collect or inspect references, generate multiple directions, compare them side by side, select a small shortlist, and only then lock the page grammar, assets, and implementation plan.
 
 When a 3D idea may improve the experience, use [references/3d-web-workflow.md](references/3d-web-workflow.md) before committing to WebGL or generated 3D assets.
+
+When the target platform is Webflow, use [references/webflow-workflow.md](references/webflow-workflow.md) before designing the component architecture or choosing AI Code Components, custom code, DevLink, CMS, or MCP operations.
 
 ## Phase 2: Journey, grammar, and score
 
