@@ -20,11 +20,14 @@ Treat scrolling as a timeline, not as a way to move past a stack of sections. Bu
 - Avoid default AI signals: fake dashboards, arbitrary counters, gradient text, purple glow, repetitive feature-card grids, endless centered copy, scroll arrows, and visible `01 / 06` counters.
 - Do not claim a site was tested or deployed until you actually preview or inspect it.
 - Treat reference websites as the source of truth for visual intent. Do not replace them with a generic interpretation of “modern”, “premium”, or “cinematic”.
+- Do not rely on one-shot prompting. Build and compare visible alternatives, narrow the direction with the user, and keep a reusable taste library so each project starts from evidence rather than model defaults.
 - Never claim 100% pixel or behavior identity before checking the target state against the reference. State what is matched exactly, what is approximated, and what cannot be observed.
 - Ask focused questions until every requested reference effect has an observable acceptance criterion. Do not begin an expensive generation while a key effect is ambiguous.
 - Before any paid image/video generation, show the planned style, reference roles, model, aspect ratio, duration, and estimated credits. Generate only after the user confirms, unless the user explicitly authorizes autonomous spending.
 - Prefer Higgsfield for production assets when it is connected. Use GPT Image 2 for typography-sensitive graphics, controlled edits, compositing, and cases where its output is a better fit. Do not silently substitute one for the other.
 - Never assume a named Higgsfield model exists. Inspect the live catalog. If it is unavailable, explain the nearest supported model and its tradeoff before generation.
+- Build video heroes from composition-first keyframes: reserve intentional negative space for copy, approve the still, then use image-to-video with one subtle dominant motion before attempting complex scenes.
+- Offer a 3D direction during discovery when the product or story benefits from depth, spatial exploration, product manipulation, or a signature scroll moment. Choose the lightest viable route: layered 2.5D, pre-rendered video, canvas/WebGL, or a real-time Three.js scene.
 - Treat the reference library as a curated source of patterns, not a collection of sites to clone. Save only analyzed, attributable, reusable patterns and record what is original in the new build.
 - Before release, run the applicable code-quality, accessibility, performance, privacy, dependency, and security checks. Do not call a site production-ready while a critical or high-risk finding remains unexplained and accepted by the user.
 - Match security testing to the actual feature set. A static marketing page needs a lighter review than a site with accounts, payments, uploads, admin tools, APIs, or an AI agent.
@@ -74,6 +77,10 @@ If the user has already answered some questions in the conversation, reuse those
 
 Before coding, inspect the project structure, existing routes, package scripts, assets, and any `.openai/hosting.json`. If it is a hosted Sites project, follow the Sites workflow. If it is an existing repository, preserve its framework and conventions.
 
+When the visual direction is not already locked, use the visual iteration workflow in [references/visual-iteration.md](references/visual-iteration.md): collect or inspect references, generate multiple directions, compare them side by side, select a small shortlist, and only then lock the page grammar, assets, and implementation plan.
+
+When a 3D idea may improve the experience, use [references/3d-web-workflow.md](references/3d-web-workflow.md) before committing to WebGL or generated 3D assets.
+
 ## Phase 2: Journey, grammar, and score
 
 Turn the interview into four to seven beats. Each beat must change what the visitor knows or feels:
@@ -108,7 +115,7 @@ Pause for approval after presenting the brief, reference matrix, fidelity contra
 
 ## Phase 2.5: Asset and video production
 
-Use the production policy in [references/higgsfield.md](references/higgsfield.md). The minimum loop is: inspect references → create a style frame or keyframe → show it → receive approval → estimate cost → generate the smallest useful asset → inspect the result → revise one major variable at a time.
+Use the production policy in [references/higgsfield.md](references/higgsfield.md) and the composition-first video workflow in [references/video-production.md](references/video-production.md). The minimum loop is: inspect references → map the copy-safe composition → create a style frame/keyframe → show it → receive approval → estimate cost → generate the smallest useful asset → inspect the result → integrate it into the hero → revise one major variable at a time.
 
 For video, first decide whether the user will provide a clip or wants a generation. A user-provided clip must be analyzed for usable start/end frames, subject continuity, motion direction, camera path, duration, and whether it can be scrubbed. A generated clip must receive a model recommendation, cost estimate, and a production prompt before submission. Offer a self-generation route with a copy-ready prompt and exact settings when the user wants to generate outside ChatGPT.
 
@@ -164,3 +171,5 @@ For detailed pattern selection and QA gates, read [references/patterns.md](refer
 For reference curation and reusable effect entries, read [references/reference-library.md](references/reference-library.md). For release checks and feature-specific security gates, read [references/release-security.md](references/release-security.md).
 For turning a visual reference into a precise implementation brief, read [references/prompt-library.md](references/prompt-library.md).
 For public prompt-library methodology analysis and external-source curation, read [references/motionsites-analysis.md](references/motionsites-analysis.md).
+For taste libraries, visual comparison, and iterative design narrowing, read [references/visual-iteration.md](references/visual-iteration.md).
+For 3D direction selection, asset production, and WebGL/scroll integration, read [references/3d-web-workflow.md](references/3d-web-workflow.md).
