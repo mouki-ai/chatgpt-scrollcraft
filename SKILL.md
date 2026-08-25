@@ -25,6 +25,9 @@ Treat scrolling as a timeline, not as a way to move past a stack of sections. Bu
 - Before any paid image/video generation, show the planned style, reference roles, model, aspect ratio, duration, and estimated credits. Generate only after the user confirms, unless the user explicitly authorizes autonomous spending.
 - Prefer Higgsfield for production assets when it is connected. Use GPT Image 2 for typography-sensitive graphics, controlled edits, compositing, and cases where its output is a better fit. Do not silently substitute one for the other.
 - Never assume a named Higgsfield model exists. Inspect the live catalog. If it is unavailable, explain the nearest supported model and its tradeoff before generation.
+- Treat the reference library as a curated source of patterns, not a collection of sites to clone. Save only analyzed, attributable, reusable patterns and record what is original in the new build.
+- Before release, run the applicable code-quality, accessibility, performance, privacy, dependency, and security checks. Do not call a site production-ready while a critical or high-risk finding remains unexplained and accepted by the user.
+- Match security testing to the actual feature set. A static marketing page needs a lighter review than a site with accounts, payments, uploads, admin tools, APIs, or an AI agent.
 
 ## Phase 0: Reference intake and fidelity contract
 
@@ -137,6 +140,8 @@ Inspect the rendered page at minimum in these states:
 - slow or missing media;
 - long and short text where layout could break.
 
+Run the applicable release gates in [references/release-security.md](references/release-security.md). At minimum, inspect the code and dependency graph, run the project's tests and build, scan for secrets, verify security headers and cookie settings, test authorization boundaries, and perform a permitted non-destructive dynamic security pass. For payments, webhooks, uploads, accounts, or AI-agent features, use the corresponding mandatory gates in that reference.
+
 Look specifically for dead scroll, unreadable text over bright imagery, copy that never reaches full opacity, frozen video, horizontal overflow, sticky elements covering the CTA, broken touch interactions, and a close that simply fades away. Read the screenshots or preview yourself. A passing build check is not visual approval.
 
 Fix the highest-impact issue first, then re-preview. Record what was actually verified and what could not be verified in `SCROLL_REPORT.md`.
@@ -150,8 +155,10 @@ Deliver the working project or artifact, plus a concise report containing:
 - files changed and assets used;
 - preview or deployment link if available;
 - desktop/mobile/reduced-motion checks performed;
+- code, accessibility, performance, privacy, and security checks performed, including tool names, scope, date, and unresolved findings;
 - known limitations and the next recommended improvement.
 
 When continuing an existing build, read the existing brief and report first, preserve accepted decisions, and change only what the user requests unless a defect requires a broader fix.
 
 For detailed pattern selection and QA gates, read [references/patterns.md](references/patterns.md) and [references/qa.md](references/qa.md).
+For reference curation and reusable effect entries, read [references/reference-library.md](references/reference-library.md). For release checks and feature-specific security gates, read [references/release-security.md](references/release-security.md).
