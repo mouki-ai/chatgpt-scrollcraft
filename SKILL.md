@@ -162,3 +162,5 @@ When continuing an existing build, read the existing brief and report first, pre
 
 For detailed pattern selection and QA gates, read [references/patterns.md](references/patterns.md) and [references/qa.md](references/qa.md).
 For reference curation and reusable effect entries, read [references/reference-library.md](references/reference-library.md). For release checks and feature-specific security gates, read [references/release-security.md](references/release-security.md).
+For turning a visual reference into a precise implementation brief, read [references/prompt-library.md](references/prompt-library.md).
+For public prompt-library methodology analysis and external-source curation, read [references/motionsites-analysis.md](references/motionsites-analysis.md).
